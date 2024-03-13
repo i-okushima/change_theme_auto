@@ -1,0 +1,760 @@
+@charset "UTF-8";
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 2rem;
+}
+
+.container .title_area {
+  width: 100%;
+  padding: 48px 0;
+  margin-bottom: 48px;
+}
+.container .title_area .content_inner {
+  max-width: 390px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
+  background: none;
+}
+
+header {
+  font-size: 1rem;
+  padding: 24px 0;
+  border-bottom: 1px solid;
+}
+header .content_inner {
+  max-width: 390px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 2rem;
+  background: none;
+}
+
+main {
+  max-width: 390px;
+  margin: 0 auto;
+  margin-bottom: 18px;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+a {
+  color: #1b97a2;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  border-top: 1px solid;
+  padding: 48px 0;
+  margin-top: 48px;
+}
+footer .content_inner {
+  max-width: 390px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
+  background: none;
+}
+
+.content_wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.content_wrapper_text {
+  border: 1px solid;
+  padding: 24px;
+  border-radius: 5px;
+  border-color: #dddddd;
+}
+.content_wrapper_text li {
+  margin-bottom: 16px;
+}
+
+.content_wrapper_form_element {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.content_wrapper_form_element fieldset {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 8px;
+}
+
+nav {
+  max-width: 390px;
+  margin: 0 auto;
+}
+nav ul {
+  padding: 24px 0;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+.SurfaceContainer {
+  padding: 24px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.Primary {
+  color: #f8d32f;
+}
+
+.Secondary {
+  color: #1b97a2;
+}
+
+.Error {
+  color: #cf2e2e;
+}
+
+.White {
+  color: #ffffff;
+}
+
+.Gray {
+  color: #777777;
+}
+
+.Black {
+  color: #000000;
+}
+
+.Annotation {
+  color: #bbbbbb;
+}
+
+/*テキストボックス*/
+.textbox {
+  width: calc(100% - 38px);
+  padding: 16px 16px;
+  border: 3px solid;
+  border-radius: 3px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.textbox:focus {
+  border: 3px solid;
+  outline: none;
+}
+
+/*セレクトボックス*/
+.selectbox {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.selectbox::after {
+  position: absolute;
+  right: 15px;
+  width: 10px;
+  height: 7px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background-color: #777777;
+  content: "";
+  pointer-events: none;
+}
+.selectbox select {
+  appearance: none;
+  width: 100%;
+  border: 3px solid;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #777777;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 16px;
+  cursor: pointer;
+}
+.selectbox select option {
+  background-color: #777777;
+  color: #ffffff;
+  display: block;
+}
+.selectbox select:focus {
+  border: 3px solid;
+  outline: none;
+}
+
+/*チェックボックス*/
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 2em;
+  border: none;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox label:has(:checked) {
+  color: #1b97a2;
+}
+
+.checkbox label::before,
+.checkbox label:has(:checked)::after {
+  content: "";
+}
+
+.checkbox label::before {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: #7a7a7a;
+  padding: 4px;
+}
+
+.checkbox label:has(:checked)::before {
+  background-color: #1b97a2;
+  border: 1px solid;
+}
+
+.checkbox label:has(:checked)::after {
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  transform: rotate(45deg);
+  width: 5px;
+  height: 16px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+}
+
+.checkbox input {
+  display: none;
+}
+
+/*ラジオボタン*/
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 2em;
+  border: none;
+}
+
+.radio label {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio label::before,
+.radio label::after {
+  border-radius: 50%;
+  content: "";
+}
+
+.radio label::before {
+  width: 24px;
+  height: 24px;
+  border: 1px solid;
+  border-color: #a3a3a3;
+}
+
+.radio label:has(:checked) {
+  color: #1b97a2;
+}
+
+.radio label:has(:checked)::before {
+  border: 1px solid #1b97a2;
+}
+
+.radio label::after {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #ebebeb;
+}
+
+.radio label:has(:checked)::after {
+  background-color: #1b97a2;
+}
+
+.radio input {
+  display: none;
+}
+
+/*ボタン*/
+.button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 100vh;
+  font-weight: bold;
+  border: none;
+  background-color: #1b97a2;
+  color: #fafafa;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 0.7;
+}
+
+/*共通設定*/
+input:disabled,
+button:disabled,
+select:disabled,
+fieldset:disabled,
+label:disabled {
+  opacity: 0.3;
+  cursor: unset;
+  pointer-events: none;
+}
+
+html,
+body,
+header,
+div,
+p,
+ul,
+li,
+footer,
+.SurfaceContainer {
+  transition: 0.5s;
+  color: #121212;
+  background: #fafafa;
+  border-color: #1b97a2;
+}
+html header,
+body header,
+header header,
+div header,
+p header,
+ul header,
+li header,
+footer header,
+.SurfaceContainer header {
+  border-color: #1b97a2;
+}
+html .title_area,
+body .title_area,
+header .title_area,
+div .title_area,
+p .title_area,
+ul .title_area,
+li .title_area,
+footer .title_area,
+.SurfaceContainer .title_area {
+  background-color: #1b97a2;
+}
+html .title_area .content_inner,
+body .title_area .content_inner,
+header .title_area .content_inner,
+div .title_area .content_inner,
+p .title_area .content_inner,
+ul .title_area .content_inner,
+li .title_area .content_inner,
+footer .title_area .content_inner,
+.SurfaceContainer .title_area .content_inner {
+  color: #fafafa;
+}
+html .SurfaceContainer,
+body .SurfaceContainer,
+header .SurfaceContainer,
+div .SurfaceContainer,
+p .SurfaceContainer,
+ul .SurfaceContainer,
+li .SurfaceContainer,
+footer .SurfaceContainer,
+.SurfaceContainer .SurfaceContainer {
+  background: #ebebeb;
+}
+html .SurfaceContainer .SurfaceContainer,
+body .SurfaceContainer .SurfaceContainer,
+header .SurfaceContainer .SurfaceContainer,
+div .SurfaceContainer .SurfaceContainer,
+p .SurfaceContainer .SurfaceContainer,
+ul .SurfaceContainer .SurfaceContainer,
+li .SurfaceContainer .SurfaceContainer,
+footer .SurfaceContainer .SurfaceContainer,
+.SurfaceContainer .SurfaceContainer .SurfaceContainer {
+  background: #a3a3a3;
+}
+html .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+body .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+header .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+div .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+p .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+ul .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+li .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+footer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+.SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+  background: #7a7a7a;
+}
+html .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+body .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+header .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+div .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+p .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+ul .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+li .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+footer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+.SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+  background: #525252;
+}
+html .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+body .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+header .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+div .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+p .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+ul .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+li .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+footer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+.SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+  background: #292929;
+  color: #ebebeb;
+}
+html .textbox,
+body .textbox,
+header .textbox,
+div .textbox,
+p .textbox,
+ul .textbox,
+li .textbox,
+footer .textbox,
+.SurfaceContainer .textbox {
+  border-color: #a3a3a3;
+  background: #ffffff;
+}
+html .textbox:focus,
+body .textbox:focus,
+header .textbox:focus,
+div .textbox:focus,
+p .textbox:focus,
+ul .textbox:focus,
+li .textbox:focus,
+footer .textbox:focus,
+.SurfaceContainer .textbox:focus {
+  border-color: #1b97a2;
+}
+html .selectbox select,
+body .selectbox select,
+header .selectbox select,
+div .selectbox select,
+p .selectbox select,
+ul .selectbox select,
+li .selectbox select,
+footer .selectbox select,
+.SurfaceContainer .selectbox select {
+  border-color: #a3a3a3;
+}
+html .selectbox select:focus,
+body .selectbox select:focus,
+header .selectbox select:focus,
+div .selectbox select:focus,
+p .selectbox select:focus,
+ul .selectbox select:focus,
+li .selectbox select:focus,
+footer .selectbox select:focus,
+.SurfaceContainer .selectbox select:focus {
+  border-color: #1b97a2;
+}
+html .radio label:has(:checked),
+body .radio label:has(:checked),
+header .radio label:has(:checked),
+div .radio label:has(:checked),
+p .radio label:has(:checked),
+ul .radio label:has(:checked),
+li .radio label:has(:checked),
+footer .radio label:has(:checked),
+.SurfaceContainer .radio label:has(:checked) {
+  color: #1b97a2;
+}
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  header,
+  div,
+  p,
+  ul,
+  li,
+  footer,
+  .SurfaceContainer {
+    transition: 0.5s;
+    color: #fafafa;
+    background: #121212;
+    border-color: #f8d32f;
+  }
+  html header,
+  body header,
+  header header,
+  div header,
+  p header,
+  ul header,
+  li header,
+  footer header,
+  .SurfaceContainer header {
+    border-color: #f8d32f;
+  }
+  html a,
+  body a,
+  header a,
+  div a,
+  p a,
+  ul a,
+  li a,
+  footer a,
+  .SurfaceContainer a {
+    color: #f8d32f;
+  }
+  html .Annotation,
+  body .Annotation,
+  header .Annotation,
+  div .Annotation,
+  p .Annotation,
+  ul .Annotation,
+  li .Annotation,
+  footer .Annotation,
+  .SurfaceContainer .Annotation {
+    color: #666666;
+  }
+  html .title_area,
+  body .title_area,
+  header .title_area,
+  div .title_area,
+  p .title_area,
+  ul .title_area,
+  li .title_area,
+  footer .title_area,
+  .SurfaceContainer .title_area {
+    background-color: #f8d32f;
+  }
+  html .title_area .content_inner,
+  body .title_area .content_inner,
+  header .title_area .content_inner,
+  div .title_area .content_inner,
+  p .title_area .content_inner,
+  ul .title_area .content_inner,
+  li .title_area .content_inner,
+  footer .title_area .content_inner,
+  .SurfaceContainer .title_area .content_inner {
+    color: #121212;
+  }
+  html .SurfaceContainer,
+  body .SurfaceContainer,
+  header .SurfaceContainer,
+  div .SurfaceContainer,
+  p .SurfaceContainer,
+  ul .SurfaceContainer,
+  li .SurfaceContainer,
+  footer .SurfaceContainer,
+  .SurfaceContainer .SurfaceContainer {
+    background: #292929;
+  }
+  html .SurfaceContainer .SurfaceContainer,
+  body .SurfaceContainer .SurfaceContainer,
+  header .SurfaceContainer .SurfaceContainer,
+  div .SurfaceContainer .SurfaceContainer,
+  p .SurfaceContainer .SurfaceContainer,
+  ul .SurfaceContainer .SurfaceContainer,
+  li .SurfaceContainer .SurfaceContainer,
+  footer .SurfaceContainer .SurfaceContainer,
+  .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+    background: #525252;
+  }
+  html .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  body .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  header .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  div .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  p .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  ul .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  li .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  footer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+    background: #7a7a7a;
+  }
+  html .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  body .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  header .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  div .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  p .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  ul .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  li .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  footer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+    background: #a3a3a3;
+  }
+  html .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  body .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  header .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  div .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  p .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  ul .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  li .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  footer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer,
+  .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer .SurfaceContainer {
+    background: #ebebeb;
+    color: #292929;
+  }
+  html .textbox:focus,
+  body .textbox:focus,
+  header .textbox:focus,
+  div .textbox:focus,
+  p .textbox:focus,
+  ul .textbox:focus,
+  li .textbox:focus,
+  footer .textbox:focus,
+  .SurfaceContainer .textbox:focus {
+    border-color: #f8d32f;
+  }
+  html .selectbox select:focus,
+  body .selectbox select:focus,
+  header .selectbox select:focus,
+  div .selectbox select:focus,
+  p .selectbox select:focus,
+  ul .selectbox select:focus,
+  li .selectbox select:focus,
+  footer .selectbox select:focus,
+  .SurfaceContainer .selectbox select:focus {
+    border-color: #f8d32f;
+  }
+  html .checkbox label,
+  body .checkbox label,
+  header .checkbox label,
+  div .checkbox label,
+  p .checkbox label,
+  ul .checkbox label,
+  li .checkbox label,
+  footer .checkbox label,
+  .SurfaceContainer .checkbox label {
+    color: #ebebeb;
+  }
+  html .checkbox label:has(:checked),
+  body .checkbox label:has(:checked),
+  header .checkbox label:has(:checked),
+  div .checkbox label:has(:checked),
+  p .checkbox label:has(:checked),
+  ul .checkbox label:has(:checked),
+  li .checkbox label:has(:checked),
+  footer .checkbox label:has(:checked),
+  .SurfaceContainer .checkbox label:has(:checked) {
+    color: #f8d32f;
+  }
+  html .checkbox label:has(:checked)::after,
+  body .checkbox label:has(:checked)::after,
+  header .checkbox label:has(:checked)::after,
+  div .checkbox label:has(:checked)::after,
+  p .checkbox label:has(:checked)::after,
+  ul .checkbox label:has(:checked)::after,
+  li .checkbox label:has(:checked)::after,
+  footer .checkbox label:has(:checked)::after,
+  .SurfaceContainer .checkbox label:has(:checked)::after {
+    border-color: #121212;
+  }
+  html .checkbox label:has(:checked)::before,
+  body .checkbox label:has(:checked)::before,
+  header .checkbox label:has(:checked)::before,
+  div .checkbox label:has(:checked)::before,
+  p .checkbox label:has(:checked)::before,
+  ul .checkbox label:has(:checked)::before,
+  li .checkbox label:has(:checked)::before,
+  footer .checkbox label:has(:checked)::before,
+  .SurfaceContainer .checkbox label:has(:checked)::before {
+    background-color: #f8d32f;
+    border-color: #f8d32f;
+  }
+  html .radio label,
+  body .radio label,
+  header .radio label,
+  div .radio label,
+  p .radio label,
+  ul .radio label,
+  li .radio label,
+  footer .radio label,
+  .SurfaceContainer .radio label {
+    color: #ebebeb;
+  }
+  html .radio label:has(:checked),
+  body .radio label:has(:checked),
+  header .radio label:has(:checked),
+  div .radio label:has(:checked),
+  p .radio label:has(:checked),
+  ul .radio label:has(:checked),
+  li .radio label:has(:checked),
+  footer .radio label:has(:checked),
+  .SurfaceContainer .radio label:has(:checked) {
+    color: #f8d32f;
+  }
+  html .radio label:has(:checked)::before,
+  body .radio label:has(:checked)::before,
+  header .radio label:has(:checked)::before,
+  div .radio label:has(:checked)::before,
+  p .radio label:has(:checked)::before,
+  ul .radio label:has(:checked)::before,
+  li .radio label:has(:checked)::before,
+  footer .radio label:has(:checked)::before,
+  .SurfaceContainer .radio label:has(:checked)::before {
+    border-color: #f8d32f;
+  }
+  html .radio label:has(:checked)::after,
+  body .radio label:has(:checked)::after,
+  header .radio label:has(:checked)::after,
+  div .radio label:has(:checked)::after,
+  p .radio label:has(:checked)::after,
+  ul .radio label:has(:checked)::after,
+  li .radio label:has(:checked)::after,
+  footer .radio label:has(:checked)::after,
+  .SurfaceContainer .radio label:has(:checked)::after {
+    background-color: #f8d32f;
+  }
+  html .radio label::after,
+  body .radio label::after,
+  header .radio label::after,
+  div .radio label::after,
+  p .radio label::after,
+  ul .radio label::after,
+  li .radio label::after,
+  footer .radio label::after,
+  .SurfaceContainer .radio label::after {
+    background-color: #525252;
+  }
+  html .button,
+  body .button,
+  header .button,
+  div .button,
+  p .button,
+  ul .button,
+  li .button,
+  footer .button,
+  .SurfaceContainer .button {
+    background-color: #f8d32f;
+    color: #121212;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,154 @@
+@mixin switchTheme($darkmode: false) {
+  transition: 0.5s;
+  @if $darkmode {
+    // ダークテーマの共通設定
+    color: $DarkTheme_Text;
+    background: $DarkTheme_Background;
+    border-color: $Primary;
+    header {
+      border-color: $Primary;
+    }
+    a {
+      color: $Primary;
+    }
+    .Annotation {
+      color: $DarkTheme_TextAnnotation;
+    }
+    .title_area {
+      background-color: $Primary;
+      .content_inner {
+        color: $onPrimary;
+      }
+    }
+    // ダークテーマの個別設定
+    .SurfaceContainer {
+      background: $DarkTheme_SurfaceContainerLowest;
+      .SurfaceContainer {
+        background: $DarkTheme_SurfaceContainerLow;
+        .SurfaceContainer {
+          background: $DarkTheme_SurfaceContainer;
+          .SurfaceContainer {
+            background: $DarkTheme_SurfaceContainerHigh;
+            .SurfaceContainer {
+              background: $DarkTheme_SurfaceContainerHighest;
+              color: $DarkTheme_SurfaceContainerLowest;
+            }
+          }
+        }
+      }
+    }
+    .textbox:focus {
+      border-color: $Primary;
+    }
+    .selectbox {
+      select {
+        &:focus {
+          border-color: $Primary;
+        }
+      }
+    }
+    .checkbox {
+      label {
+        color: $DarkTheme_SurfaceContainerHighest;
+        &:has(:checked) {
+          color: $Primary;
+          &::after {
+            border-color: $onPrimary;
+          }
+          &::before {
+            background-color: $Primary;
+            border-color: $Primary;
+          }
+        }
+      }
+    }
+    .radio {
+      label {
+        color: $DarkTheme_SurfaceContainerHighest;
+        &:has(:checked) {
+          color: $Primary;
+          &::before {
+            border-color: $Primary;
+          }
+          &::after {
+            background-color: $Primary;
+          }
+        }
+        &::after {
+          background-color: $DarkTheme_SurfaceContainerLow;
+        }
+      }
+    }
+    .button {
+      background-color: $Primary;
+      color: $onPrimary;
+    }
+  } @else {
+    // ライトテーマの共通設定
+    color: $LightTheme_Text;
+    background: $LightTheme_Background;
+    border-color: $Secondary;
+    header {
+      border-color: $Secondary;
+    }
+    .title_area {
+      background-color: $Secondary;
+      .content_inner {
+        color: $onSecondary;
+      }
+    }
+    // ライトテーマの個別設定
+    .SurfaceContainer {
+      background: $LightTheme_SurfaceContainerLowest;
+      .SurfaceContainer {
+        background: $LightTheme_SurfaceContainerLow;
+        .SurfaceContainer {
+          background: $LightTheme_SurfaceContainer;
+          .SurfaceContainer {
+            background: $LightTheme_SurfaceContainerHigh;
+            .SurfaceContainer {
+              background: $LightTheme_SurfaceContainerHighest;
+              color: $LightTheme_SurfaceContainerLowest;
+            }
+          }
+        }
+      }
+    }
+
+    .textbox {
+      border-color: $LightTheme_SurfaceContainerLow;
+      background: $White;
+      &:focus {
+        border-color: $Secondary;
+      }
+    }
+
+    .selectbox {
+      select {
+        border-color: $LightTheme_SurfaceContainerLow;
+        &:focus {
+          border-color: $Secondary;
+        }
+      }
+    }
+
+    .radio label:has(:checked) {
+      color: $Secondary;
+    }
+  }
+}
+
+html,
+body,
+header,
+div,
+p,
+ul,
+li,
+footer,
+.SurfaceContainer {
+  @include switchTheme();
+  @media (prefers-color-scheme: dark) {
+    @include switchTheme(true);
+  }
+}
