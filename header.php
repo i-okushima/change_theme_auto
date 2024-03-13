@@ -24,7 +24,7 @@
     <nav>
       <ul>
         <li>
-          <a href="<?php echo home_url('/'); ?>">text要素</a>
+          <a href="<?php echo home_url('/text-elements'); ?>">text要素</a>
         </li>
         <li>
           <a href="<?php echo home_url('/div-elements'); ?>">div要素</a>
